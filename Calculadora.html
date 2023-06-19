@@ -1,0 +1,243 @@
+<!docktype html>
+
+<Html lang="pt-br">
+
+<Head>
+
+<Meta charset ="utf-8">
+
+<Meta name ="viewport" content-"width=device-wudth, initial scale-1.0">
+
+<Title > exercisios </title>
+
+<style>
+
+.fundo{
+
+    background-image:linear-gradient(45deg,black,    #0000FF );
+
+    height:100vh;
+
+    color:white;
+
+}
+
+.calculadora{
+
+    background:black;
+
+    top:25%;
+
+    position:absolute;
+
+    left:25%;
+
+    border-radius:15px;
+
+    padding:15px;
+
+}
+
+.botão{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background-color:rgb(31,31,31);
+
+}
+
+*{
+
+    margin:0px;
+
+    padding:0px;
+
+}
+
+.botão:hover{
+
+    background-color:black;
+
+ 
+
+}
+
+#resultado{
+
+    background:white;
+
+    width:207px;
+
+    height:30px;
+
+    margin:5px;
+
+    color:black;
+
+    text-align:right;
+
+    font-family:Arial,helvetica,sans-serif;
+
+    padding:5px;
+
+}
+
+footer{
+
+    background-image:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+
+    border-radius:10px;
+
+    text-align:center;
+
+    padding:3px;
+
+    width:200;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+<h1>Calculadora
+
+</h1> 
+
+<div class="fundo">
+
+<div class="calculadora">
+
+<p id="resultado"></p>
+
+
+
+<table>
+
+<tr>
+
+<td><button class="botão" onclick="clean()">C</button></td>
+
+<td><button class="botão" onclick="back()" >< </button>
+
+<td><button class="botão" onclick="insert('/')" > / </button></td>
+
+<td><button class="botão" onclick="insert('*')" > X </button></td>
+
+</tr>
+
+<tr>
+
+<td><button class="botão" onclick="insert('1')"> 1 </button> </td>
+
+<td> <button class="botão" onclick="insert('2')"> 2 </button> </td>
+
+<td> <button class="botão" onclick="insert('3')"> 3 </button> </td>
+
+<td> <button class="botão" onclick="insert(-)"> - </button> </td>
+
+</tr>
+
+<tr>
+
+<td><button class="botão" onclick="insert('4')"> 4 </button> </td>
+
+<td> <button class="botão" onclick="insert('5')"> 5 </button> </td>
+
+<td> <button class="botão" onclick="insert(6)"> 6 </button> </td>
+
+<td> <button class="botão" onclick="insert(+)"> + </button> </td>
+
+</tr>
+
+<tr>
+
+<td><button class="botão"onclick="insert('7')" > 7 </button> </td>
+
+<td> <button class="botão"  onclick="insert('8')"> 8 </button> </td>
+
+<td> <button class="botão" onclick="insert('9')"> 9 </button> </td>
+
+<td rowspan="2"> <button class="botão" style=height:100px; onclick=resultado()> = </button> </td>
+
+</tr>
+
+<tr>
+
+<td colspan="2"><button class="botão" style=width:100px;  onclick="insert('0')"> 0 </button></td>
+
+<td><button class="botão" onclick="insert('.')"> . </button> </td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<footer><p> &reg @thiagoagugusto761
+
+</p> </footer>
+
+</div>
+
+
+
+<script>
+
+function insert(num){
+
+   var numero=document.getElementById('resultado').innerHTML; document.getElementById('resultado').innerHTML=numero+num
+
+}
+
+function clean(){
+
+    document.getElementById('resultado').innerHTML='';
+
+}
+
+function back(){
+
+    var resultado=document.getElementById('resultado').innerHTML;document.getElementById('resultado').innerHTML=resultado.substring(0,resultado.length-1)
+
+}
+
+function resultado(){
+
+    var resultado=document.getElementById('resultado');
+
+    if(resultado)
+
+    {
+
+        document.getElementById('resultado').innerHTML=eval(resultado);
+
+    }
+
+    else{
+
+        document.getElementById('resultado').innerHTML="NO EXIST...";
+
+    }
+
+}
+
+</script>
+
+</Body>
+
+</Html>
